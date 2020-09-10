@@ -1,0 +1,233 @@
+$mobile-bar-h: 45px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header, #fakeHeader {
+  position: relative;
+  height: 70px;
+  width: 100vw;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header{
+    
+    color: #c23616ed;
+    font-family: 'Pacifico', cursive;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#fakeHeader {
+  height: 75px;
+  position: fixed;
+  top: -75px;
+  opacity: 0;
+  transition: all 1s ease;
+  z-index: 1986;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 120%;
+
+    div{
+        border-radius: 5px;
+    }
+
+     input[type=text]{
+        padding: 0px 40px;
+        border-radius: 100px;
+        border-style: none;
+        outline: none;
+        font-size: 17px;
+        background-image: url("/assets/Imgs/buscar.png");
+        background-position: 18px 17px;
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-color: rgb(230,230,230);
+    }
+
+  input{
+      width: 60%;
+      height: 60%;
+      border-radius: 50px;
+      background-color: rgba(100,100,100,0.15);
+      border: none;
+      font-size: 110%;
+    }
+    input:hover{
+        
+        background-color: rgba(100,100,100,0.3);
+
+    }
+    a{
+        border-radius: 5px;
+    }
+    img{
+        width: 30px;
+    }
+}
+
+
+#today:Hover{
+    
+background-color: rgba(100,100,100,0.15);
+
+}
+#home:Hover{
+
+background-color: rgba(100,100,100,0.15);
+
+}
+#follow:Hover{
+
+   background-color: rgba(100,100,100,0.15);
+   
+}
+#notificaciones:hover{
+    
+    background-color: rgba(100,100,100,0.15);
+    
+}
+#mensaje:hover{
+
+    background-color: rgba(100,100,100,0.15);
+
+}
+#content {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  padding: 5px;
+}
+
+#searchbar, footer{
+    display: none;
+    transition: all 1s ease;
+}
+#searchbar{
+
+    position: fixed;
+    height: $mobile-bar-h;
+    width: 100%;
+    background-color: white;
+    top: 0px;
+    padding: 6px 15px;
+    justify-content: space-evenly;
+    justify-items: auto;
+   
+    input{
+        width: 100%;
+        background-color: #5f5f5f7a;
+        border-radius: 10px;
+    }
+    &.hide{
+        top: -$mobile-bar-h;
+    }
+
+    img{
+        width: 10%;
+    }
+    
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    background-color: white;
+    width: 100%;
+    border-top: 1px solid rgba(40,40,40,0.4);
+    justify-content: space-between;
+    padding: 0 15px;
+   
+    
+    .btn{
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 5px;
+        svg{
+            width: 24px;
+            height: 24px;
+            path{
+                fill: #5f5f5f;
+            }
+            
+        }
+    }  
+}
+
+.column {
+  padding: 5px;
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  justify-content: space-between;
+    .element {
+        width: 100%;
+        border-radius: 10px;
+        margin: 5px 0;
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+}
+
+
+@media (max-width: 375px){
+    #content{
+        flex-flow: row wrap;
+        margin-top: $mobile-bar-h;
+    }
+    .column{
+        flex: 33.3%;
+    }
+    #searchbar, footer{ 
+        display: flex;
+        height: $mobile-bar-h;
+    }
+    header, #fakeHeader {
+        display: none;
+    }
+}
+
+#ib-back {
+    position: fixed;
+    top: 90;
+    left: 90;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255,255,255,0.753);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+#ib-back.show{
+    visibility: visible;
+    opacity: 1;
+}
+
+#ib-img{
+    position: relative;
+    top: 50px;
+    left: -3px;
+    text-align: center;
+}
